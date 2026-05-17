@@ -77,6 +77,6 @@ The below is in order of precedence // lowest -> highest.
 - Manual entry during plan/apply
 - Default value in declaration block
 - `TF_VAR_<name>` environment variables
-- `terraform.tfvars` file (also loaded **automatically** but with standard naming convention. Use normally for simple local default setup)
+- `terraform.tfvars` file (also loaded **automatically** but with standard naming convention. Use normally for simple local default setup. **Non-sensitive data.**)
 - `*auto.tfvars` file (flexible named file loaded **automatically** when you run `terraform apply` or `terraform plan`)
 - Command line `-var` or `-var-file`
