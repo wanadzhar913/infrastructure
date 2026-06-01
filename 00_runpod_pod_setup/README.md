@@ -1,4 +1,4 @@
-# About
+# 1.0 About
 
 This setup provisions a RunPod pod for us to rent a GPU server. Do ensure you set your `terraform.tfvars` file to set your `runpod_api_key`.
 
@@ -18,7 +18,7 @@ Then we can SSH into our server (use SSH exposed over TCP on VS Code) after addi
 ssh root@"${POD_PUBLIC_IP}" -p 16352 -i ~/.ssh/id_ed25519
 ```
 
-# Steps to set up VM server
+# 2.0 Steps to set up VM server
 
 1. Set up GitHub CLI [here](https://docs.github.com/en/github-cli/github-cli/quickstart)
 2. Run the shell script to set up your environment*.
@@ -29,7 +29,7 @@ ssh root@"${POD_PUBLIC_IP}" -p 16352 -i ~/.ssh/id_ed25519
 
 ***NOTE:** Adjust the environment variables as needed!*
 
-### Resources
+# 3.0 Resources
 - [GitHub CLI quickstart](https://docs.github.com/en/github-cli/github-cli/quickstart)
 - [RunPod Terraform package](https://registry.terraform.io/providers/decentralized-infrastructure/runpod/1.0.1)
 - [Runpod Setup FULL Tutorial – Run Large AI Models On The Cloud!](https://youtu.be/JEWKmm1VjeU?si=elguDAeN7lmgtM2p)
