@@ -13,7 +13,7 @@ provider "runpod" {
 # Create a network volume
 resource "runpod_network_volume" "storage" {
   name           = "faiq-storage"
-  size           = 10
+  size           = 200
   data_center_id = "US-CA-2"
 }
 
