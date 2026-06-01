@@ -26,7 +26,28 @@ ssh root@"${POD_PUBLIC_IP}" -p 16352 -i ~/.ssh/id_ed25519
    cd ../workspace
    chmod +x setup_ray_pr_branch.sh
    ./setup_ray_pr_branch.sh
+
+   cd ray
+   source .venv/bin/activate
+   RAY_LLM_BENCHMARK_ARTIFACT_PATH=/workspace/ray/release/llm_tests/batch/test_batch_single_nodel_vllm.json \
+      RAY_DATA_LLM_BENCHMARK_MIN_THROUGHPUT=4 \
+      pytest -s release/llm_tests/batch/test_batch_single_node_vllm.py
    ```
+3. Test GPU access by running `nvidia-smi`. I wish it outputed something like this for free 🥹.
+   ```markdown
+   +-----------------------------------------------------------------------------------------+
+   | NVIDIA-SMI 580.126.09             Driver Version: 580.126.09     CUDA Version: 13.0     |
+   +-----------------------------------------+------------------------+----------------------+
+   | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+   | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+   |                                         |                        |               MIG M. |
+   |=========================================+========================+======================|
+   |   0  NVIDIA H100 80GB HBM3          On  |   00000000:19:00.0 Off |                    0 |
+   | N/A   38C    P0             75W /  700W |       0MiB /  81559MiB |      0%      Default |
+   |                                         |                        |             Disabled |
+   +-----------------------------------------+------------------------+----------------------+
+   ```
+4. `terraform destroy` to clean up all your resources.
 
 ***NOTE:** Adjust the environment variables as needed!*
 
