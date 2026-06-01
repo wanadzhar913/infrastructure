@@ -3,6 +3,10 @@
 **/*.tfstate*
 **/*.tfplan
 **/.terraform.lock.hcl
+**/terraform.tfvars
 
 # Miscellaneous
 *.csv
+.env
+.env.*
+ssh_keys/
