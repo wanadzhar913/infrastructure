@@ -30,8 +30,8 @@ resource "runpod_pod" "gpu_instance" {
   support_public_ip    = true
   network_volume_id    = runpod_network_volume.storage.id
 
-  volume_in_gb         = 40
-  container_disk_in_gb = 40
+  volume_in_gb         = 200
+  container_disk_in_gb = 200
 
   env = {
   }
