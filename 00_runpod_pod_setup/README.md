@@ -1,6 +1,6 @@
 # 1.0 About
 
-This setup provisions a RunPod pod for us to rent a GPU server. Do ensure you set your `terraform.tfvars` file to set your `runpod_api_key`.
+This setup provisions a RunPod pod for us to rent a GPU server. Do ensure you create a `terraform.tfvars` file to set your `runpod_api_key`.
 
 ```bash
 terraform plan
@@ -23,6 +23,7 @@ ssh root@"${POD_PUBLIC_IP}" -p 16352 -i ~/.ssh/id_ed25519
 1. Set up GitHub CLI [here](https://docs.github.com/en/github-cli/github-cli/quickstart)
 2. Run the shell script to set up your environment*.
    ```bash
+   cd ../workspace
    chmod +x setup_ray_pr_branch.sh
    ./setup_ray_pr_branch.sh
    ```
