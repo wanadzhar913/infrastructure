@@ -3,6 +3,7 @@
 This setup provisions a RunPod pod for us to rent a GPU server. Do ensure you create a `terraform.tfvars` file to set your `runpod_api_key`.
 
 ```bash
+# terraform state rm runpod_network_volume.storage # if needed
 terraform plan
 terraform apply
 
@@ -46,6 +47,8 @@ ssh root@"${POD_PUBLIC_IP}" -p 16352 -i ~/.ssh/id_ed25519
    | N/A   38C    P0             75W /  700W |       0MiB /  81559MiB |      0%      Default |
    |                                         |                        |             Disabled |
    +-----------------------------------------+------------------------+----------------------+
+
+   ...
    ```
 4. `terraform destroy` to clean up all your resources.
 

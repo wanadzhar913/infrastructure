@@ -21,7 +21,8 @@ resource "runpod_network_volume" "storage" {
 resource "runpod_pod" "gpu_instance" {
   name              = "faiq-gpu-pod"
   image_name        = "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404"
-  gpu_type_ids      = ["NVIDIA GeForce RTX 4090", "NVIDIA A40", "NVIDIA GeForce RTX 3090 Ti", "Tesla T4"]
+  gpu_type_ids      = ["NVIDIA GeForce RTX 4090", "NVIDIA A40", "NVIDIA H100 80GB HBM3",
+   "NVIDIA GeForce RTX 3090 Ti"]
   # data_center_ids   = ["US-CA-2", "US-TX-3"]
 
   gpu_count            = 1
