@@ -11,6 +11,8 @@ terraform apply
 terraform refresh
 POD_PUBLIC_IP=$(terraform output -raw pod_public_ip)
 echo "Pod IP: ${POD_PUBLIC_IP}"
+
+# terraform destroy # to clean up all your resources when we're done.
 ```
 
 Then we can SSH into our server (use SSH exposed over TCP on VS Code) after adding our SSH public keys on RunPod.
@@ -21,8 +23,8 @@ ssh root@"${POD_PUBLIC_IP}" -p 16352 -i ~/.ssh/id_ed25519
 
 # 2.0 Steps to set up VM server
 
-1. Set up GitHub CLI [here](https://docs.github.com/en/github-cli/github-cli/quickstart)
-2. Run the shell script to set up your environment*.
+1. Set up GitHub CLI [here](https://docs.github.com/en/github-cli/github-cli/quickstart).
+2. Run the [shell script(s)](/00_runpod_pod_setup/scripts/setup_ray_pr_branch.sh) to set up your environment*.
    ```bash
    cd ../workspace
    chmod +x setup_ray_pr_branch.sh
@@ -50,7 +52,6 @@ ssh root@"${POD_PUBLIC_IP}" -p 16352 -i ~/.ssh/id_ed25519
 
    ...
    ```
-4. `terraform destroy` to clean up all your resources.
 
 ***NOTE:** Adjust the environment variables as needed!*
 

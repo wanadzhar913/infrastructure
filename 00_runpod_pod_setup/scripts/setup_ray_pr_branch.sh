@@ -2,7 +2,7 @@
 set -euo pipefail
 
 RAY_REPO="${RAY_REPO:-https://github.com/wanadzhar913/ray}"
-RAY_BRANCH="${RAY_BRANCH:-data/profile-vllmengine-in-datallmrelease}"
+RAY_BRANCH="${RAY_BRANCH:-data/profile-vllmengine-in-datallmrelease-v2}"
 RAY_WHEEL="${RAY_WHEEL:-https://s3-us-west-2.amazonaws.com/ray-wheels/latest/ray-3.0.0.dev0-cp312-cp312-manylinux2014_x86_64.whl}"
 RAY_DIR="${RAY_DIR:-ray}"
 VENV_DIR="${VENV_DIR:-.venv}"
